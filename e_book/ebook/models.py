@@ -10,14 +10,15 @@ class UploadModel(models.Model):
 	file = models.FileField(upload_to='home/aiti /Desktop/')
      	date_uploaded=models.DateTimeField('date uploaded')
 	upload_title = models.CharField(max_length=50)
-	uplaod_author=models.CharField(max_length=50)
+	upload_author=models.CharField(max_length=50)
 	def __unicode__(self):
 		return self.upload_title
 
 
 class Search(models.Model):
-    	search_title=models.ForeignKey(Book)
-    	search_author=models.CharField(max_length=200)    
+    	search_title=models.ForeignKey(UploadModel)
+    	search_author=models.CharField(max_length=200) 
+	   
 	def __unicode__(self):
 		return self.search_author
 

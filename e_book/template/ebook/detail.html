@@ -1,0 +1,11 @@
+{% extends "ebook/base.html" %}
+{% block content %}
+
+{% for anybook in mybooks %}
+
+<p><li><a href="#">Title: {{ anybook.upload_title}}</a></li></p>
+<p><li>Author: {{ anybook.upload_author|linebreaks }}</li></p>
+<p><li>Date Uploaded: {{ anybook.date_uploaded }}</li></p>
+
+{% endfor %}
+{% endblock %}
